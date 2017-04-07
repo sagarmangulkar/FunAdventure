@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpE-Xu-RkB">
-                                <rect key="frame" x="115" y="174" width="144" height="71"/>
+                                <rect key="frame" x="97" y="174" width="181" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Start Game"/>
+                                <state key="normal" title="Start Game here"/>
                                 <connections>
                                     <segue destination="60J-Wx-lqF" kind="presentation" id="95l-Vk-y15"/>
                                 </connections>
