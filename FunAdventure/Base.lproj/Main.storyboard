@@ -46,12 +46,12 @@
                         <viewControllerLayoutGuide type="top" id="8Hq-UZ-PqT"/>
                         <viewControllerLayoutGuide type="bottom" id="mll-Zp-RfL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sdS-SI-YVj">
+                    <view key="view" contentMode="scaleToFill" id="sdS-SI-YVj" customClass="DrawRectangle" customModule="FunAdventure" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Started...!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-Qm-P3u">
-                                <rect key="frame" x="108" y="133" width="175" height="42"/>
+                                <rect key="frame" x="77" y="51" width="175" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
