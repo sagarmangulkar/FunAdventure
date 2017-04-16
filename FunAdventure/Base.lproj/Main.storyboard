@@ -51,12 +51,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Started...!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-Qm-P3u">
-                                <rect key="frame" x="77" y="51" width="175" height="42"/>
+                                <rect key="frame" x="106" y="617" width="175" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_hero.png" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-lu-hHW">
+                                <rect key="frame" x="139" y="227" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Km-Le-jVX">
                                 <rect key="frame" x="150" y="469" width="74" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,27 +101,50 @@
                                     <action selector="pushButtonLeft:" destination="60J-Wx-lqF" eventType="touchUpInside" id="Gdx-QN-Clj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hero_happy_smiley.png" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-lu-hHW">
-                                <rect key="frame" x="139" y="237" width="51" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-Kh-RBc">
+                                <rect key="frame" x="139" y="12" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO3-54-LEu">
+                                <rect key="frame" x="0.0" y="0.0" width="74" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.72935735486721032" blue="0.73244586855526839" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="pushButtonExit:" destination="60J-Wx-lqF" eventType="touchUpInside" id="9Hp-jp-Rzk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbE-cd-xV2">
+                                <rect key="frame" x="307" y="0.0" width="68" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.72935735489999998" blue="0.73244586860000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="pii-T8-FJN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="buttonDown" destination="jqW-CC-XzD" id="jcn-8W-Ku7"/>
+                        <outlet property="buttonExit" destination="JO3-54-LEu" id="fIv-0C-AHr"/>
                         <outlet property="buttonLeft" destination="msC-VT-GHo" id="xig-kg-2Ss"/>
                         <outlet property="buttonRight" destination="ajC-Cd-Gd8" id="0p3-Eh-l50"/>
                         <outlet property="buttonUp" destination="5Km-Le-jVX" id="hSi-gx-YLY"/>
+                        <outlet property="imageBlackBall1" destination="cTt-Kh-RBc" id="9ql-CT-0L8"/>
                         <outlet property="imageHero" destination="xZs-lu-hHW" id="wNR-og-ioA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8D-Xd-25H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="-81.409295352323838"/>
+            <point key="canvasLocation" x="1016.8" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
-        <image name="hero_happy_smiley.png" width="400" height="425"/>
+        <image name="image_blackball.png" width="256" height="256"/>
+        <image name="image_hero.png" width="480" height="480"/>
     </resources>
 </document>

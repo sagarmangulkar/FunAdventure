@@ -17,11 +17,14 @@ class PlayViewController: UIViewController {
     @IBOutlet var buttonRight: UIButton!
     @IBOutlet var buttonLeft: UIButton!
     @IBOutlet var buttonDown: UIButton!
+    @IBOutlet var imageBlackBall1: UIImageView!
+    @IBOutlet var buttonExit: UIButton!
 
-    //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        
-//    }
-
+    //Exit button
+    @IBAction func pushButtonExit(_ sender: Any) {
+        exit(0)
+    }
+    
     @IBAction func pushButtonUp(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             var frameHero = self.imageHero.frame
@@ -63,10 +66,15 @@ class PlayViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        UIView.animate(withDuration: 3, animations: {
-            var frameHero = self.imageHero.frame
-            frameHero.origin.y = frameHero.origin.y - 10
-            self.imageHero.frame = frameHero
+
+        var timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveBall1), userInfo: nil, repeats: true)
+    }
+    
+    func moveBall1(){
+        UIView.animate(withDuration: 5, animations: {
+            var frameHero = self.imageBlackBall1.frame
+            frameHero.origin.y = frameHero.origin.y + 500
+            self.imageBlackBall1.frame = frameHero
         })
     }
     
