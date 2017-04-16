@@ -25,7 +25,9 @@ class PlayViewController: UIViewController {
     @IBAction func pushButtonUp(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             var frameHero = self.imageHero.frame
-            frameHero.origin.y = frameHero.origin.y - 70
+            if(frameHero.origin.y > 216){
+                frameHero.origin.y = frameHero.origin.y - 70
+            }
             self.imageHero.frame = frameHero
         })
     }
@@ -33,7 +35,9 @@ class PlayViewController: UIViewController {
     @IBAction func pushButtonLeft(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             var frameHero = self.imageHero.frame
-            frameHero.origin.x = frameHero.origin.x - 70
+            if(frameHero.origin.x > 120){
+                frameHero.origin.x = frameHero.origin.x - 70
+            }
             self.imageHero.frame = frameHero
         })
     }
@@ -41,7 +45,9 @@ class PlayViewController: UIViewController {
     @IBAction func pushButtonDown(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             var frameHero = self.imageHero.frame
-            frameHero.origin.y = frameHero.origin.y + 70
+            if(frameHero.origin.y < 290){
+                frameHero.origin.y = frameHero.origin.y + 70
+            }
             self.imageHero.frame = frameHero
         })
     }
@@ -49,7 +55,9 @@ class PlayViewController: UIViewController {
     @IBAction func pushButtonRight(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             var frameHero = self.imageHero.frame
-            frameHero.origin.x = frameHero.origin.x + 70
+            if(frameHero.origin.x < 180){
+                frameHero.origin.x = frameHero.origin.x + 70
+            }
             self.imageHero.frame = frameHero
         })
     }
