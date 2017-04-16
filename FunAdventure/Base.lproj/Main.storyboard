@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Play View Controller-->
         <scene sceneID="n0h-rb-7SI">
             <objects>
-                <viewController id="60J-Wx-lqF" sceneMemberID="viewController">
+                <viewController id="60J-Wx-lqF" customClass="PlayViewController" customModule="FunAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Hq-UZ-PqT"/>
                         <viewControllerLayoutGuide type="bottom" id="mll-Zp-RfL"/>
@@ -57,13 +57,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hero_happy_smiley.png" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-lu-hHW">
+                                <rect key="frame" x="120" y="251" width="89" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageHero" destination="xZs-lu-hHW" id="wNR-og-ioA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8D-Xd-25H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="308" y="-81.409295352323838"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hero_happy_smiley.png" width="400" height="425"/>
+    </resources>
 </document>
