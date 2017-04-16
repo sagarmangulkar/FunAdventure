@@ -14,15 +14,42 @@ class PlayViewController: UIViewController {
     
     @IBOutlet var imageHero: UIImageView!
     @IBOutlet var buttonUp: UIButton!
-//    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    @IBOutlet var buttonRight: UIButton!
+    @IBOutlet var buttonLeft: UIButton!
+    @IBOutlet var buttonDown: UIButton!
+
+    //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        
 //    }
 
     @IBAction func pushButtonUp(_ sender: Any) {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             var frameHero = self.imageHero.frame
-            frameHero.origin.y = frameHero.origin.y - 30
+            frameHero.origin.y = frameHero.origin.y - 70
+            self.imageHero.frame = frameHero
+        })
+    }
+    
+    @IBAction func pushButtonLeft(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            var frameHero = self.imageHero.frame
+            frameHero.origin.x = frameHero.origin.x - 70
+            self.imageHero.frame = frameHero
+        })
+    }
+    
+    @IBAction func pushButtonDown(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            var frameHero = self.imageHero.frame
+            frameHero.origin.y = frameHero.origin.y + 70
+            self.imageHero.frame = frameHero
+        })
+    }
+    
+    @IBAction func pushButtonRight(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            var frameHero = self.imageHero.frame
+            frameHero.origin.x = frameHero.origin.x + 70
             self.imageHero.frame = frameHero
         })
     }
