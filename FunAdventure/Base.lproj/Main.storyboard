@@ -58,13 +58,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hero_happy_smiley.png" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-lu-hHW">
-                                <rect key="frame" x="120" y="251" width="89" height="81"/>
+                                <rect key="frame" x="120" y="251" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Km-Le-jVX">
+                                <rect key="frame" x="150" y="470" width="74" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Up"/>
+                                <connections>
+                                    <action selector="pushButtonUp:" destination="60J-Wx-lqF" eventType="touchUpInside" id="JAv-uD-Vdb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="buttonUp" destination="5Km-Le-jVX" id="hSi-gx-YLY"/>
                         <outlet property="imageHero" destination="xZs-lu-hHW" id="wNR-og-ioA"/>
                     </connections>
                 </viewController>
