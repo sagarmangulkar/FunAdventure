@@ -101,10 +101,6 @@
                                     <action selector="pushButtonLeft:" destination="60J-Wx-lqF" eventType="touchUpInside" id="Gdx-QN-Clj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-Kh-RBc">
-                                <rect key="frame" x="139" y="12" width="50" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO3-54-LEu">
                                 <rect key="frame" x="0.0" y="0.0" width="74" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -125,6 +121,10 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="pii-T8-FJN"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-Kh-RBc">
+                                <rect key="frame" x="140" y="20" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

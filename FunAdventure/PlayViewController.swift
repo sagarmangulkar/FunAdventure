@@ -67,15 +67,38 @@ class PlayViewController: UIViewController {
     
     override func viewDidLoad() {
 
-        var timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveBall1), userInfo: nil, repeats: true)
+        var timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(moveBall1), userInfo: nil, repeats: true)
+        var timerIntersect = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkIntersect), userInfo: nil, repeats: true)
+        
+    }
+    
+    func checkIntersect(){
+        if(imageHero.frame.intersects(imageBlackBall1.frame)){
+            UIView.animate(withDuration: 0.5, animations: {
+                var frameHero = self.imageHero.frame
+                if(frameHero.origin.x < 180){
+                    frameHero.origin.y = frameHero.origin.y + 200
+                }
+                self.imageHero.frame = frameHero
+            })
+        }
     }
     
     func moveBall1(){
-        UIView.animate(withDuration: 5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             var frameHero = self.imageBlackBall1.frame
-            frameHero.origin.y = frameHero.origin.y + 500
+            frameHero.origin.y = frameHero.origin.y + 20
             self.imageBlackBall1.frame = frameHero
-        })
+        },completion:nil
+//            {
+//            (value: Bool) in
+//            UIView.animate(withDuration: 0.5, animations: {
+//                var frameHero = self.imageBlackBall1.frame
+//                frameHero.origin.y = frameHero.origin.y - 1
+//                self.imageBlackBall1.frame = frameHero
+//        })
+//        }
+        )
     }
     
     override func didReceiveMemoryWarning() {
