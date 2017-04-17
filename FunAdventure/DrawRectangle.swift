@@ -5,8 +5,8 @@ class DrawRectangle: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         let aPath = UIBezierPath()
-        let xRight = 275;
-        let xLeft = 50;
+        let xRight = 300;
+        let xLeft = 75;
         let yTop = 150;
         let yBottom = 350;
         let xMiddle1 = xLeft + ((xRight - xLeft)/3);

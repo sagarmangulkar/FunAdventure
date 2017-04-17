@@ -19,6 +19,7 @@ class PlayViewController: UIViewController {
     @IBOutlet var buttonDown: UIButton!
     @IBOutlet var imageBlackBall1: UIImageView!
     @IBOutlet var buttonExit: UIButton!
+    @IBOutlet var imageBlackBall2: UIImageView!
 
     //Exit button
     @IBAction func pushButtonExit(_ sender: Any) {
@@ -66,39 +67,45 @@ class PlayViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-
-        var timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(moveBall1), userInfo: nil, repeats: true)
+        startingState()
         var timerIntersect = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkIntersect), userInfo: nil, repeats: true)
+        var timerMoveBall1 = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(moveBall1), userInfo: nil, repeats: true)
+        var timerMoveBall2 = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(moveBall2), userInfo: nil, repeats: true)
         
     }
     
+    func startingState(){
+        imageHero.image = UIImage(named:"image_hero.png")
+        imageHero.frame.origin.x = 162
+        imageHero.frame.origin.y = 227
+        
+        imageBlackBall1.frame.origin.x = 160
+        imageBlackBall1.frame.origin.y = 0
+        
+        imageBlackBall2.frame.origin.x = 0
+        imageBlackBall2.frame.origin.y = 160
+    }
+    
     func checkIntersect(){
-        if(imageHero.frame.intersects(imageBlackBall1.frame)){
-            UIView.animate(withDuration: 0.5, animations: {
-                var frameHero = self.imageHero.frame
-                if(frameHero.origin.x < 180){
-                    frameHero.origin.y = frameHero.origin.y + 200
-                }
-                self.imageHero.frame = frameHero
-            })
+        if((imageHero.layer.frame.intersects(imageBlackBall1.layer.frame)) ||
+            (imageHero.layer.frame.intersects(imageBlackBall2.layer.frame))){
+            imageHero.image = UIImage(named:"image_hero_gameover.jpg")
         }
     }
     
     func moveBall1(){
-        UIView.animate(withDuration: 0.5, animations: {
-            var frameHero = self.imageBlackBall1.frame
-            frameHero.origin.y = frameHero.origin.y + 20
-            self.imageBlackBall1.frame = frameHero
-        },completion:nil
-//            {
-//            (value: Bool) in
-//            UIView.animate(withDuration: 0.5, animations: {
-//                var frameHero = self.imageBlackBall1.frame
-//                frameHero.origin.y = frameHero.origin.y - 1
-//                self.imageBlackBall1.frame = frameHero
-//        })
-//        }
-        )
+        UIView.animate(withDuration: 0.05, animations: {
+            var frameTemp = self.imageBlackBall1.frame
+            frameTemp.origin.y = frameTemp.origin.y + 5
+            self.imageBlackBall1.frame = frameTemp
+        },completion:nil)
+    }
+    func moveBall2(){
+        UIView.animate(withDuration: 0.05, animations: {
+            var frameTemp = self.imageBlackBall2.frame
+            frameTemp.origin.x = frameTemp.origin.x + 5
+            self.imageBlackBall2.frame = frameTemp
+        },completion:nil)
     }
     
     override func didReceiveMemoryWarning() {

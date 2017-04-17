@@ -58,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_hero.png" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-lu-hHW">
-                                <rect key="frame" x="139" y="227" width="51" height="50"/>
+                                <rect key="frame" x="162" y="227" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Km-Le-jVX">
@@ -101,6 +101,10 @@
                                     <action selector="pushButtonLeft:" destination="60J-Wx-lqF" eventType="touchUpInside" id="Gdx-QN-Clj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-Kh-RBc">
+                                <rect key="frame" x="155" y="20" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO3-54-LEu">
                                 <rect key="frame" x="0.0" y="0.0" width="74" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -121,8 +125,8 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="pii-T8-FJN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-Kh-RBc">
-                                <rect key="frame" x="140" y="20" width="50" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="bGi-iW-4me">
+                                <rect key="frame" x="0.0" y="170" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -135,6 +139,7 @@
                         <outlet property="buttonRight" destination="ajC-Cd-Gd8" id="0p3-Eh-l50"/>
                         <outlet property="buttonUp" destination="5Km-Le-jVX" id="hSi-gx-YLY"/>
                         <outlet property="imageBlackBall1" destination="cTt-Kh-RBc" id="9ql-CT-0L8"/>
+                        <outlet property="imageBlackBall2" destination="bGi-iW-4me" id="Kko-0I-UcI"/>
                         <outlet property="imageHero" destination="xZs-lu-hHW" id="wNR-og-ioA"/>
                     </connections>
                 </viewController>
