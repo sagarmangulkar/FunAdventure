@@ -129,6 +129,14 @@
                                 <rect key="frame" x="0.0" y="170" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRb-ji-oSt">
+                                <rect key="frame" x="325" y="170" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_blackball.png" translatesAutoresizingMaskIntoConstraints="NO" id="WWE-wG-Cix">
+                                <rect key="frame" x="181" y="395" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -140,6 +148,8 @@
                         <outlet property="buttonUp" destination="5Km-Le-jVX" id="hSi-gx-YLY"/>
                         <outlet property="imageBlackBall1" destination="cTt-Kh-RBc" id="9ql-CT-0L8"/>
                         <outlet property="imageBlackBall2" destination="bGi-iW-4me" id="Kko-0I-UcI"/>
+                        <outlet property="imageBlackBall3" destination="WWE-wG-Cix" id="OVc-cA-Nsd"/>
+                        <outlet property="imageBlackBall4" destination="rRb-ji-oSt" id="xlM-uz-L3q"/>
                         <outlet property="imageHero" destination="xZs-lu-hHW" id="wNR-og-ioA"/>
                     </connections>
                 </viewController>
