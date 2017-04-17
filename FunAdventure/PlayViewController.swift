@@ -9,8 +9,10 @@
 import UIKit
 
 class PlayViewController: UIViewController {
-    
+    var yourScore = 0
+    var isGameOvered = false
     var location = CGPoint(x: 0, y: 0)
+    @IBOutlet var imageGameOver: UIImageView!
     
     @IBOutlet var imageHero: UIImageView!
     @IBOutlet var buttonUp: UIButton!
@@ -22,6 +24,8 @@ class PlayViewController: UIViewController {
     @IBOutlet var imageBlackBall2: UIImageView!
     @IBOutlet var imageBlackBall3: UIImageView!
     @IBOutlet var imageBlackBall4: UIImageView!
+    @IBOutlet var labelYourScore: UILabel!
+    @IBOutlet var labelHighScore: UILabel!
     
     
     //Exit button
@@ -69,17 +73,67 @@ class PlayViewController: UIViewController {
         })
     }
     
+    func draw1() -> UIBezierPath {
+        // Drawing code
+        let aPath = UIBezierPath()
+        let xRight = 300;
+        let xLeft = 75;
+        let yTop = 150;
+        let yBottom = 350;
+        let xMiddle1 = xLeft + ((xRight - xLeft)/3);
+        let xMiddle2 = xRight - ((xRight - xLeft)/3);
+        
+        let yMiddle1 = yTop + ((yBottom - yTop)/3);
+        let yMiddle2 = yBottom - ((yBottom - yTop)/3);
+        
+        aPath.move(to: CGPoint(x:xLeft, y:yTop))
+        aPath.addLine(to: CGPoint(x:xRight, y:yTop))
+        aPath.addLine(to: CGPoint(x:xRight, y:yBottom))
+        aPath.addLine(to: CGPoint(x:xLeft, y:yBottom))
+        aPath.addLine(to: CGPoint(x:xLeft, y:yTop))
+        aPath.addLine(to: CGPoint(x:xMiddle1, y:yTop))
+        aPath.addLine(to: CGPoint(x:xMiddle1, y:yBottom))
+        aPath.addLine(to: CGPoint(x:xMiddle2, y:yBottom))
+        aPath.addLine(to: CGPoint(x:xMiddle2, y:yTop))
+        aPath.addLine(to: CGPoint(x:xRight, y:yTop))
+        aPath.addLine(to: CGPoint(x:xRight, y:yMiddle1))
+        aPath.addLine(to: CGPoint(x:xLeft, y:yMiddle1))
+        aPath.addLine(to: CGPoint(x:xLeft, y:yMiddle2))
+        aPath.addLine(to: CGPoint(x:xRight, y:yMiddle2))
+        aPath.addLine(to: CGPoint(x:xRight, y:yTop))
+        
+        aPath.close()
+        
+        //Giving a red color
+        UIColor.red.set()
+        aPath.stroke()
+        return aPath
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         startingState()
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = draw1().cgPath
+        shapeLayer.fillColor = nil
+        //shapeLayer.fillColor = UIColor(red: 0.5, green: 1, blue: 0.5, alpha: 1).cgColor
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.lineWidth = 1.0
+        view.layer.addSublayer(shapeLayer)
         var timerIntersect = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkIntersect), userInfo: nil, repeats: true)
         var timerMoveBall1 = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(moveBall1), userInfo: nil, repeats: true)
         var timerMoveBall2 = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(moveBall2), userInfo: nil, repeats: true)
         var timerMoveBall3 = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(moveBall3), userInfo: nil, repeats: true)
         var timerMoveBall4 = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(moveBall4), userInfo: nil, repeats: true)
+        var timerIncreamentScore = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(increamentScore), userInfo: nil, repeats: true)
     }
     
     func startingState(){
         imageHero.image = UIImage(named:"image_hero.png")
+        imageGameOver.isHidden = true
+        isGameOvered = false
         imageHero.frame.origin.x = 162
         imageHero.frame.origin.y = 227
         
@@ -96,12 +150,18 @@ class PlayViewController: UIViewController {
         imageBlackBall4.frame.origin.y = 290
     }
     
+    func gameOver(){
+        isGameOvered = true
+        imageHero.image = UIImage(named:"image_hero_gameover.jpg")
+        imageGameOver.isHidden = false
+    }
+    
     func checkIntersect(){
         if((imageHero.layer.frame.intersects(imageBlackBall1.layer.frame)) ||
             (imageHero.layer.frame.intersects(imageBlackBall2.layer.frame)) ||
             (imageHero.layer.frame.intersects(imageBlackBall3.layer.frame)) ||
             (imageHero.layer.frame.intersects(imageBlackBall4.layer.frame))){
-            imageHero.image = UIImage(named:"image_hero_gameover.jpg")
+            gameOver()
         }
     }
     
@@ -120,7 +180,7 @@ class PlayViewController: UIViewController {
         }
         return CGFloat(position)
     }
-
+    
     //generates a random y value
     func generateYRandomPosition()->CGFloat{
         let randomNumber = arc4random_uniform(3)
@@ -145,12 +205,12 @@ class PlayViewController: UIViewController {
         },completion:{
             (finished: Bool) in
             if(self.imageBlackBall1.frame.origin.y > 800){
-            UIView.animate(withDuration: 0, animations: {
-                var frameTemp = self.imageBlackBall1.frame
-                frameTemp.origin.x = self.generateXRandomPosition()
-                frameTemp.origin.y = -200
-                self.imageBlackBall1.frame = frameTemp
-            })
+                UIView.animate(withDuration: 0, animations: {
+                    var frameTemp = self.imageBlackBall1.frame
+                    frameTemp.origin.x = self.generateXRandomPosition()
+                    frameTemp.origin.y = -200
+                    self.imageBlackBall1.frame = frameTemp
+                })
             }
         })
     }
@@ -204,6 +264,15 @@ class PlayViewController: UIViewController {
                 })
             }
         })
+    }
+    
+    func increamentScore(){
+        if(!isGameOvered){
+            yourScore = yourScore + 10
+            //  print(yourScore)
+            let yourScoreString: Int = yourScore
+            labelYourScore.text = String(yourScoreString)
+        }
     }
     
     override func didReceiveMemoryWarning() {
