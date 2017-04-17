@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct MyVariables {
+    static var highScore = 0
+}
+
 class PlayViewController: UIViewController {
     var yourScore = 0
     var isGameOvered = false
@@ -132,6 +136,8 @@ class PlayViewController: UIViewController {
     
     func startingState(){
         imageHero.image = UIImage(named:"image_hero.png")
+        let highScoreString: Int = MyVariables.highScore
+        labelHighScore.text = String(highScoreString)
         imageGameOver.isHidden = true
         isGameOvered = false
         imageHero.frame.origin.x = 162
@@ -272,6 +278,13 @@ class PlayViewController: UIViewController {
             //  print(yourScore)
             let yourScoreString: Int = yourScore
             labelYourScore.text = String(yourScoreString)
+            let highScoreInt: Int? = Int(labelHighScore.text!)
+            
+            if(yourScore > highScoreInt!){
+                MyVariables.highScore = yourScore
+                let highScoreString: Int = MyVariables.highScore
+                labelHighScore.text = String(highScoreString)
+            }
         }
     }
     
