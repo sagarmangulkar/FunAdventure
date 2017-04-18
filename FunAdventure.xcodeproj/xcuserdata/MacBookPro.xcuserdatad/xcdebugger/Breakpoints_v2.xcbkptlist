@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FunAdventure/PlayViewController.swift"
-            timestampString = "514165930.692936"
+            timestampString = "514167046.451973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "increamentScore()"
             landmarkType = "7">
          </BreakpointContent>

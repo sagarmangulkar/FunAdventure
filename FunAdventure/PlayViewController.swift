@@ -30,6 +30,7 @@ class PlayViewController: UIViewController {
     @IBOutlet var imageBlackBall4: UIImageView!
     @IBOutlet var labelYourScore: UILabel!
     @IBOutlet var labelHighScore: UILabel!
+    @IBOutlet var buttonPlayAgain: UIButton!
     
     
     //Exit button
@@ -140,6 +141,8 @@ class PlayViewController: UIViewController {
         labelHighScore.text = String(highScoreString)
         imageGameOver.isHidden = true
         isGameOvered = false
+        buttonPlayAgain.isHidden = true
+        
         imageHero.frame.origin.x = 162
         imageHero.frame.origin.y = 227
         
@@ -160,6 +163,7 @@ class PlayViewController: UIViewController {
         isGameOvered = true
         imageHero.image = UIImage(named:"image_hero_gameover.jpg")
         imageGameOver.isHidden = false
+        buttonPlayAgain.isHidden = false
     }
     
     func checkIntersect(){
