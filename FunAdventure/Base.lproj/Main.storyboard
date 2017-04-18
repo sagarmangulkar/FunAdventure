@@ -25,12 +25,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpE-Xu-RkB">
-                                <rect key="frame" x="87" y="449" width="201" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpE-Xu-RkB">
+                                <rect key="frame" x="47" y="434" width="281" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.53354759845903343" green="0.94462396378708546" blue="0.10110149171070863" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Start Game">
+                                <state key="normal" image="start_button.png">
                                     <color key="titleColor" red="0.056295444787969585" green="0.17350336393533911" blue="0.94705088350785338" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -171,9 +170,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbE-cd-xV2">
                                 <rect key="frame" x="307" y="0.0" width="68" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.72935735489999998" blue="0.73244586860000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.57479139397905765" green="0.20552959794940531" blue="0.40595792580113821" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.99055842240000003" green="1" blue="0.77021787659999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="pii-T8-FJN"/>
                                 </connections>
@@ -181,9 +182,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO3-54-LEu">
                                 <rect key="frame" x="0.0" y="0.0" width="74" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.72935735486721032" blue="0.73244586855526839" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.42506544502617805" green="0.31080054044924849" blue="0.31080054044924849" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Exit"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" red="0.99055842240000003" green="1" blue="0.77021787659999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pushButtonExit:" destination="60J-Wx-lqF" eventType="touchUpInside" id="9Hp-jp-Rzk"/>
                                 </connections>
@@ -236,6 +239,7 @@
         <image name="image_hero.png" width="480" height="480"/>
         <image name="image_play_background.jpg" width="1024" height="568"/>
         <image name="image_start_background.jpg" width="452" height="640"/>
+        <image name="start_button.png" width="315" height="149"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="95l-Vk-y15"/>
