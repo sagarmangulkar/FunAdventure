@@ -17,6 +17,11 @@
 		522E9AC41EA574B8008847AD /* image_start_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 522E9AC31EA574B8008847AD /* image_start_background.jpg */; };
 		522E9AC61EA57C4C008847AD /* game-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 522E9AC51EA57C4C008847AD /* game-over.png */; };
 		522E9AC81EA58DC5008847AD /* image_Play_Again_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 522E9AC71EA58DC5008847AD /* image_Play_Again_Button.png */; };
+		522E9ACA1EA59679008847AD /* Futuristic_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 522E9AC91EA59679008847AD /* Futuristic_music.mp3 */; };
+		522E9ACF1EA59B8B008847AD /* buttonDown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 522E9ACB1EA59B8B008847AD /* buttonDown.jpg */; };
+		522E9AD01EA59B8B008847AD /* buttonLeft.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 522E9ACC1EA59B8B008847AD /* buttonLeft.jpg */; };
+		522E9AD11EA59B8B008847AD /* buttonRight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 522E9ACD1EA59B8B008847AD /* buttonRight.jpg */; };
+		522E9AD21EA59B8B008847AD /* buttonUp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 522E9ACE1EA59B8B008847AD /* buttonUp.jpg */; };
 		5258A7151E972BA6003A8478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A7141E972BA6003A8478 /* AppDelegate.swift */; };
 		5258A7171E972BA6003A8478 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A7161E972BA6003A8478 /* ViewController.swift */; };
 		5258A71A1E972BA6003A8478 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5258A7181E972BA6003A8478 /* Main.storyboard */; };
@@ -54,6 +59,11 @@
 		522E9AC31EA574B8008847AD /* image_start_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_start_background.jpg; sourceTree = SOURCE_ROOT; };
 		522E9AC51EA57C4C008847AD /* game-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-over.png"; path = "../game-over.png"; sourceTree = "<group>"; };
 		522E9AC71EA58DC5008847AD /* image_Play_Again_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_Play_Again_Button.png; sourceTree = SOURCE_ROOT; };
+		522E9AC91EA59679008847AD /* Futuristic_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Futuristic_music.mp3; sourceTree = SOURCE_ROOT; };
+		522E9ACB1EA59B8B008847AD /* buttonDown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = buttonDown.jpg; sourceTree = SOURCE_ROOT; };
+		522E9ACC1EA59B8B008847AD /* buttonLeft.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = buttonLeft.jpg; sourceTree = SOURCE_ROOT; };
+		522E9ACD1EA59B8B008847AD /* buttonRight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = buttonRight.jpg; sourceTree = SOURCE_ROOT; };
+		522E9ACE1EA59B8B008847AD /* buttonUp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = buttonUp.jpg; sourceTree = SOURCE_ROOT; };
 		5258A7111E972BA6003A8478 /* FunAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5258A7141E972BA6003A8478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5258A7161E972BA6003A8478 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +107,11 @@
 		522E9AB21EA01B78008847AD /* Supporting_Files */ = {
 			isa = PBXGroup;
 			children = (
+				522E9AC91EA59679008847AD /* Futuristic_music.mp3 */,
+				522E9ACB1EA59B8B008847AD /* buttonDown.jpg */,
+				522E9ACC1EA59B8B008847AD /* buttonLeft.jpg */,
+				522E9ACD1EA59B8B008847AD /* buttonRight.jpg */,
+				522E9ACE1EA59B8B008847AD /* buttonUp.jpg */,
 				522E9AC71EA58DC5008847AD /* image_Play_Again_Button.png */,
 				522E9AC51EA57C4C008847AD /* game-over.png */,
 				522E9AC31EA574B8008847AD /* image_start_background.jpg */,
@@ -270,16 +285,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522E9ACA1EA59679008847AD /* Futuristic_music.mp3 in Resources */,
 				5258A71F1E972BA6003A8478 /* LaunchScreen.storyboard in Resources */,
 				522E9AC61EA57C4C008847AD /* game-over.png in Resources */,
+				522E9ACF1EA59B8B008847AD /* buttonDown.jpg in Resources */,
 				522E9ABC1EA41C70008847AD /* image_blackball.png in Resources */,
 				522E9AC01EA4A415008847AD /* image_hero_gameover.jpg in Resources */,
 				522E9ABE1EA41C70008847AD /* image_hero2.png in Resources */,
 				5258A71C1E972BA6003A8478 /* Assets.xcassets in Resources */,
+				522E9AD01EA59B8B008847AD /* buttonLeft.jpg in Resources */,
 				522E9AC81EA58DC5008847AD /* image_Play_Again_Button.png in Resources */,
 				5258A71A1E972BA6003A8478 /* Main.storyboard in Resources */,
 				522E9ABD1EA41C70008847AD /* image_hero.png in Resources */,
+				522E9AD21EA59B8B008847AD /* buttonUp.jpg in Resources */,
 				522E9AC21EA54753008847AD /* image_play_background.jpg in Resources */,
+				522E9AD11EA59B8B008847AD /* buttonRight.jpg in Resources */,
 				522E9AC41EA574B8008847AD /* image_start_background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

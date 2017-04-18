@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 struct MyVariables {
     static var highScore = 0
@@ -119,6 +120,7 @@ class PlayViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        playSound()
         startingState()
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = draw1().cgPath
@@ -142,6 +144,10 @@ class PlayViewController: UIViewController {
         imageGameOver.isHidden = true
         isGameOvered = false
         buttonPlayAgain.isHidden = true
+        buttonUp.isHidden = false
+        buttonDown.isHidden = false
+        buttonRight.isHidden = false
+        buttonLeft.isHidden = false
         
         imageHero.frame.origin.x = 162
         imageHero.frame.origin.y = 227
@@ -159,11 +165,34 @@ class PlayViewController: UIViewController {
         imageBlackBall4.frame.origin.y = 290
     }
     
+    
+    var player: AVAudioPlayer?
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "Futuristic_music", withExtension: "mp3")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
     func gameOver(){
         isGameOvered = true
         imageHero.image = UIImage(named:"image_hero_gameover.jpg")
         imageGameOver.isHidden = false
         buttonPlayAgain.isHidden = false
+        buttonUp.isHidden = true
+        buttonDown.isHidden = true
+        buttonRight.isHidden = true
+        buttonLeft.isHidden = true
+        player?.stop()
     }
     
     func checkIntersect(){
@@ -210,7 +239,7 @@ class PlayViewController: UIViewController {
     func moveBall1(){
         UIView.animate(withDuration: 0.05, animations: {
             var frameTemp = self.imageBlackBall1.frame
-            frameTemp.origin.y = frameTemp.origin.y + 3
+            frameTemp.origin.y = frameTemp.origin.y + 4
             self.imageBlackBall1.frame = frameTemp
         },completion:{
             (finished: Bool) in
@@ -227,7 +256,7 @@ class PlayViewController: UIViewController {
     func moveBall2(){
         UIView.animate(withDuration: 0.05, animations: {
             var frameTemp = self.imageBlackBall2.frame
-            frameTemp.origin.x = frameTemp.origin.x + 3
+            frameTemp.origin.x = frameTemp.origin.x + 4
             self.imageBlackBall2.frame = frameTemp
         },completion:{
             (finished: Bool) in
@@ -244,7 +273,7 @@ class PlayViewController: UIViewController {
     func moveBall3(){
         UIView.animate(withDuration: 0.05, animations: {
             var frameTemp = self.imageBlackBall3.frame
-            frameTemp.origin.y = frameTemp.origin.y - 3
+            frameTemp.origin.y = frameTemp.origin.y - 4
             self.imageBlackBall3.frame = frameTemp
         },completion:{
             (finished: Bool) in
@@ -261,7 +290,7 @@ class PlayViewController: UIViewController {
     func moveBall4(){
         UIView.animate(withDuration: 0.05, animations: {
             var frameTemp = self.imageBlackBall4.frame
-            frameTemp.origin.x = frameTemp.origin.x - 3
+            frameTemp.origin.x = frameTemp.origin.x - 4
             self.imageBlackBall4.frame = frameTemp
         },completion:{
             (finished: Bool) in
